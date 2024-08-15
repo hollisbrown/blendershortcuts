@@ -1368,6 +1368,7 @@
 
     <script>
         const tagColors = ["rgba(204,130,115,0.4)", "rgba(226,170,125,0.4)", "rgba(240,207,142,0.4)", "rgba(246,237,206,0.4)", "rgba(168,200,166,0.4)", "rgba(108,141,138,0.4)", "rgba(100,80,88,0.4)"];
+        
         const header = document.getElementById("header");
         const filter = document.getElementById("filter");
         const buttonMenu = document.getElementById("buttonMenu");
@@ -1375,16 +1376,17 @@
         const buttonFilter = document.getElementById("buttonFilter");
         const tagButtons = document.getElementsByClassName("buttonTag");
         const items = document.getElementsByClassName("item");
-        
-        let itemTags = [];
-        let itemContents = [];
-        let itemLinks = [];
-        let itemCollapse = [];
+
+        const itemTags = [];
+        const itemContents = [];
+        const itemLinks = [];
+        const itemCollapse = [];
+
         let isMenu = false;
         let isContent = false;
         let isTag = false;
 
-        window.addEventListener("load", (event) => {
+        document.addEventListener("DOMContentLoaded", (event) => {
             buttonMenu.addEventListener("click", () => { toggleMenu() });     
             buttonContent.addEventListener("click", () => { toggleAllContent() });
             buttonFilter.addEventListener("click", () => { toggleTags() })
@@ -1394,8 +1396,6 @@
                 tagButtons[i].addEventListener("click", () => { filterByTag(index) });
                 tagButtons[i].style.backgroundColor = tagColors[i];
             }
-
-            items
 
             for (let i = 0; i < items.length; i++) {
                 const link = items[i].getElementsByClassName("itemLink")[0];
@@ -1408,7 +1408,7 @@
                 itemCollapse.push(collapse);
                 const tags = items[i].getElementsByClassName("tag");
 
-                let arr = []
+                const arr = []
                 for (let j = 0; j < tags.length; j++) {
                     arr.push(tags[j].dataset.index);
                     // let index = parseInt(tags[j].dataset.index) - 1;
@@ -1419,28 +1419,6 @@
             buttonMenu.classList.toggle("hidden");
         });
 
-
-        function filterByTag(index) {
-            for (let i = 0; i < tagButtons.length; i++) {
-                tagButtons[i].classList.remove("active");
-            }
-
-            if (index != "0") {
-                const tagCurrent = parseInt(index) - 1;
-                tagButtons[tagCurrent].classList.add("active");
-                for (let i = 0; i < itemTags.length; i++) {
-                    items[i].classList.remove("hidden");
-                    if (itemTags[i].indexOf(index) == -1) {
-                        items[i].classList.add("hidden");
-                    }
-                }
-            } else {
-                for (let i = 0; i < itemTags.length; i++) {
-                    items[i].classList.remove("hidden");
-                }
-            }
-        }
-
         function toggleMenu() {
             isMenu = !isMenu;
             buttonContent.classList.toggle("hidden");
@@ -1449,18 +1427,6 @@
                 filter.classList.add("hidden");
             } else if (isTag) {
                 filter.classList.remove("hidden");
-            }
-        }
-
-        function toggleTags() {
-            isTag = !isTag;
-            filter.classList.toggle("hidden");
-            buttonFilter.classList.toggle("inactive");
-            if (isTag) {
-                buttonFilter.innerHTML = "All"
-            } else {
-                filterByTag("0");
-                buttonFilter.innerHTML = "Tags";
             }
         }
 
@@ -1485,6 +1451,41 @@
             }
             header.classList.toggle("hidden");
             buttonContent.innerHTML = (isContent) ? "Expand" : "Collapse";
+        }
+
+        function toggleTags() {
+            isTag = !isTag;
+            filter.classList.toggle("hidden");
+            buttonFilter.classList.toggle("inactive");
+            if (isTag) {
+                buttonFilter.innerHTML = "All"
+            } else {
+                filterByTag("0");
+                buttonFilter.innerHTML = "Tags";
+            }
+        }
+
+        function filterByTag(index) {
+            for (let i = 0; i < tagButtons.length; i++) {
+                tagButtons[i].classList.remove("active");
+            }
+
+            if (index != "0") {
+                const tagCurrent = parseInt(index) - 1;
+                if(!tagButtons[tagCurrent]){ console.log("Error! Tag ID does not exist!"); return; }
+
+                tagButtons[tagCurrent].classList.add("active");
+                for (let i = 0; i < itemTags.length; i++) {
+                    items[i].classList.remove("hidden");
+                    if (itemTags[i].indexOf(index) == -1) {
+                        items[i].classList.add("hidden");
+                    }
+                }
+            } else {
+                for (let i = 0; i < itemTags.length; i++) {
+                    items[i].classList.remove("hidden");
+                }
+            }
         }
 
     </script>
