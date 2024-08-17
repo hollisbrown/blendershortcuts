@@ -212,6 +212,7 @@
 
     #menu #buttonMenu {
         width: 56px;
+        border: 1px solid rgb(128, 128, 128);
     }
 
     #filter {
