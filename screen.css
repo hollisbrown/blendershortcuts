@@ -4,7 +4,7 @@
     }
 
     body {
-        background-color: rgb(22, 22, 22);
+        background-color: rgb(16, 16, 16);
         margin: 0;
         padding: 0;
     }
@@ -40,7 +40,7 @@
     p {
         font-size: 100%;
         line-height: 180%;
-        color: gray;
+        color: rgb(140, 140, 140)
     }
 
     p em {
@@ -95,7 +95,6 @@
         left: 50%;
         transform: translateX(-50%);
         margin-top: 30px;
-
         border-radius: 4px;
     }
 
@@ -105,8 +104,8 @@
 
         text-align: center;
         text-decoration: none;
-        background-color: rgb(36, 36, 36);
-        border: 1px solid rgb(36, 36, 36);
+        background-color: rgb(32, 32, 32);
+        border: 1px solid rgb(32, 32, 32);
         border-radius: 5px 5px 0px 0px;
 
         user-select: none;
@@ -122,7 +121,7 @@
         text-align: left;
         cursor: text;
         user-select: text;
-        background-color: rgb(28, 28, 28);
+        background-color: rgb(24, 24, 24);
     }
 
     .content ul {
@@ -137,7 +136,7 @@
         justify-content: center;
         flex-basis: 10px;
         gap: 3px;
-        background-color: rgb(28, 28, 28);
+        background-color: rgb(20, 20, 20);
         user-select: none;
         display: none;
     }
@@ -152,7 +151,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         color: #b3b3b3;
-        background-color: rgb(15, 15, 15);
+        background-color: rgb(10, 10, 10);
     }
 
     .itemCollapse {
@@ -160,14 +159,14 @@
         height: 20px;
         text-align: center;
         display: block;
-        background-color: rgb(28, 28, 28);
+        background-color: rgb(20, 20, 20);
         border-radius: 0px 0px 5px 5px;
         user-select: none;
         cursor: pointer;
     }
 
     .itemCollapse:hover {
-        background-color: rgb(15, 15, 15);
+        background-color: rgb(18, 18, 18);
     }
 
     .hidden {
@@ -200,19 +199,17 @@
         color: #bbbbbb;
 
         border-radius: 4px;
-        background-color: rgba(15, 15, 15, 1);
-        border: 1px solid rgba(0, 0, 0, 0);
+        background-color: rgba(32, 32, 32, 1);
+        border: none;
         white-space: nowrap;
     }
 
     #menu button:hover {
-        border: 1px solid rgb(180, 180, 180);
         filter: brightness(200%);
     }
 
     #menu #buttonMenu {
         width: 56px;
-        border: 1px solid rgb(128, 128, 128);
     }
 
     #filter {
