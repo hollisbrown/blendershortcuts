@@ -877,36 +877,6 @@
 
         </div>
 
-        <div class="item" id="Merge">
-            <a class="itemLink" href="#Merge">
-                <h3>Merge</h3>
-                <h3><em class="shortcut">M</em></h3>
-                <video autoplay loop muted playsinline>
-                    <source src="videos/MergeCenter.mp4" type="video/mp4">
-                </video>
-            </a>
-
-            <div class="content">
-                <ul>
-                    <li>
-                        <p>Merge all selected vertices at a specified point.
-                        </p>
-                    </li>
-                    <li>
-                        <p><em class="important">Merge By Distance</em> to remove vertices that are closer than the
-                            threshold value, which you can set in the context menu.</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="tags">
-                <div class="tag" data-index="4">Modeling</div>
-            </div>
-
-            <a class="itemCollapse"></a>
-
-        </div>
-
         <div class="item" id="AddFace">
             <a class="itemLink" href="#AddFace">
                 <h3>Add Face</h3>
@@ -943,22 +913,24 @@
 
         </div>
 
-        <div class="item" id="Split">
-            <a class="itemLink" href="#Split">
-                <h3>Split</h3>
-                <h3> <em class="shortcut">Y</em></h3>
+        <div class="item" id="Merge">
+            <a class="itemLink" href="#Merge">
+                <h3>Merge</h3>
+                <h3><em class="shortcut">M</em></h3>
                 <video autoplay loop muted playsinline>
-                    <source src="videos/Split.mp4" type="video/mp4">
+                    <source src="videos/MergeCenter.mp4" type="video/mp4">
                 </video>
             </a>
 
             <div class="content">
                 <ul>
                     <li>
-                        <p><em class="shortcut">Y</em> to split the selected mesh.</p>
+                        <p>Merge all selected vertices at a specified point.
+                        </p>
                     </li>
                     <li>
-                        <p>The mesh is disconnected but still part of the same data block and object.</p>
+                        <p><em class="important">Merge By Distance</em> to remove vertices that are closer than the
+                            threshold value, which you can set in the context menu.</p>
                     </li>
                 </ul>
             </div>
@@ -983,10 +955,38 @@
             <div class="content">
                 <ul>
                     <li>
-                        <p><em class="shortcut">V</em> to rip faces in the direction of the cursor.</p>
+                        <p><em class="shortcut">V</em> to rip vertices or edges.</p>
                     </li>
                     <li>
-                        <p>Works with vertex select and face select.</p>
+                        <p>The rip direction is determined by the cursor position.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tags">
+                <div class="tag" data-index="4">Modeling</div>
+            </div>
+
+            <a class="itemCollapse"></a>
+
+        </div>
+
+        <div class="item" id="Split">
+            <a class="itemLink" href="#Split">
+                <h3>Split</h3>
+                <h3> <em class="shortcut">Y</em></h3>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/Split.mp4" type="video/mp4">
+                </video>
+            </a>
+
+            <div class="content">
+                <ul>
+                    <li>
+                        <p><em class="shortcut">Y</em> to split the selection.</p>
+                    </li>
+                    <li>
+                        <p>The selection is disconnected but still part of the same data block and object.</p>
                     </li>
                 </ul>
             </div>
@@ -1011,7 +1011,7 @@
             <div class="content">
                 <ul>
                     <li>
-                        <p><em class="shortcut">P</em> to separate the geometry into a new object.</p>
+                        <p><em class="shortcut">P</em> to separate the selection into a new object.</p>
                     </li>
                     <li>
                         <p>The new object will have the same modifiers as the object it was separated from.</p>
