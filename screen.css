@@ -238,6 +238,13 @@
         color: rgb(144, 144, 144);
     }
 
+    .highlight {
+        border: 1px solid rgb(255, 159, 44);
+    }
+
+    .highlight:hover {
+        border: 1px solid rgb(255, 170, 64);
+    }
 
     @media screen and (max-width: 720px) {
         .main {

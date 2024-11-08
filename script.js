@@ -11,11 +11,13 @@ const items = document.getElementsByClassName("item");
 const itemTags = [];
 const itemContents = [];
 const itemLinks = [];
+const itemAnchors = [];
 const itemCollapse = [];
 
 let isMenu = false;
 let isContent = false;
 let isTag = false;
+let highlighted = 0;
 
 document.addEventListener("DOMContentLoaded", (event) => {
     buttonMenu.addEventListener("click", () => { toggleMenu() });     
@@ -31,7 +33,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     for (let i = 0; i < items.length; i++) {
         const link = items[i].getElementsByClassName("itemLink")[0];
         itemLinks.push(link);
-        link.addEventListener("click", () => { expandContent(i) });
+        itemAnchors.push(link.href.split('#')[1]);
+        link.addEventListener("click", () => { expandContent(i); highlight(i) });
         const content = items[i].getElementsByClassName("content")[0];
         itemContents.push(content);
         const collapse = items[i].getElementsByClassName("itemCollapse")[0]
@@ -48,6 +51,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         itemTags.push(arr);
     }
     buttonMenu.classList.toggle("hidden");
+    readURLAnchor();
 });
 
 function toggleMenu() {
@@ -118,3 +122,24 @@ function filterByTag(index) {
         }
     }
 }
+
+function readURLAnchor() {
+    if(document.URL.split('#').length > 1){
+        let anchor = document.URL.split('#')[1];
+        console.log(anchor);
+
+        for(let i=0; i<itemAnchors.length; i++){
+            if(itemAnchors[i] == anchor){
+                highlight(i);
+                return;
+            }
+        }
+    };
+}
+
+function highlight(index){
+    itemLinks[highlighted].classList.remove("highlight");
+    itemLinks[index].classList.add("highlight");
+    highlighted = index;
+}
+
