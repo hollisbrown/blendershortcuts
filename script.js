@@ -1,10 +1,10 @@
-const tagColors = ["rgba(204,130,115,0.4)", "rgba(226,170,125,0.4)", "rgba(240,207,142,0.4)", "rgba(246,237,206,0.4)", "rgba(168,200,166,0.4)", "rgba(108,141,138,0.4)", "rgba(100,80,88,0.4)"];
+const tagColors = [" rgb(5, 5, 5);","rgba(204,130,115,0.4)", "rgba(226,170,125,0.4)", "rgba(240,207,142,0.4)", "rgba(246,237,206,0.4)", "rgba(168,200,166,0.4)", "rgba(108,141,138,0.4)", "rgba(100,80,88,0.4)"];
         
 const header = document.getElementById("header");
 const filter = document.getElementById("filter");
 const buttonMenu = document.getElementById("buttonMenu");
 const buttonContent = document.getElementById("buttonContent");
-const buttonFilter = document.getElementById("buttonFilter");
+// const buttonFilter = document.getElementById("buttonFilter");
 const tagButtons = document.getElementsByClassName("buttonTag");
 const items = document.getElementsByClassName("item");
 
@@ -22,7 +22,7 @@ let highlighted = 0;
 document.addEventListener("DOMContentLoaded", (event) => {
     buttonMenu.addEventListener("click", () => { toggleMenu() });     
     buttonContent.addEventListener("click", () => { toggleAllContent() });
-    buttonFilter.addEventListener("click", () => { toggleTags() })
+    // buttonFilter.addEventListener("click", () => { toggleTags() })
 
     for (let i = 0; i < tagButtons.length; i++) {
         const index = tagButtons[i].dataset.index
@@ -57,10 +57,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 function toggleMenu() {
     isMenu = !isMenu;
     buttonContent.classList.toggle("hidden");
-    buttonFilter.classList.toggle("hidden");
+    // buttonFilter.classList.toggle("hidden");
+
     if (!isMenu) {
         filter.classList.add("hidden");
-    } else if (isTag) {
+    } else {
         filter.classList.remove("hidden");
     }
 }
@@ -88,39 +89,28 @@ function toggleAllContent() {
     buttonContent.innerHTML = (isContent) ? "Expand" : "Collapse";
 }
 
-function toggleTags() {
-    isTag = !isTag;
-    filter.classList.toggle("hidden");
-    buttonFilter.classList.toggle("inactive");
-    if (isTag) {
-        buttonFilter.innerHTML = "All"
-    } else {
-        filterByTag("0");
-        buttonFilter.innerHTML = "Tags";
-    }
-}
-
 function filterByTag(index) {
     for (let i = 0; i < tagButtons.length; i++) {
         tagButtons[i].classList.remove("active");
     }
 
-    if (index != "0") {
-        const tagCurrent = parseInt(index) - 1;
-        if(!tagButtons[tagCurrent]){ console.log("Error! Tag ID does not exist!"); return; }
+    const tagCurrent = parseInt(index);
+    if(!tagButtons[tagCurrent]){ console.log("Error! Tag ID does not exist!"); return; }
+    tagButtons[tagCurrent].classList.add("active");
 
-        tagButtons[tagCurrent].classList.add("active");
+    if (index != "0"){
         for (let i = 0; i < itemTags.length; i++) {
             items[i].classList.remove("hidden");
             if (itemTags[i].indexOf(index) == -1) {
                 items[i].classList.add("hidden");
             }
         }
-    } else {
+    }else{
         for (let i = 0; i < itemTags.length; i++) {
             items[i].classList.remove("hidden");
         }
     }
+
 }
 
 function readURLAnchor() {
