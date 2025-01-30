@@ -1,10 +1,9 @@
-const tagColors = [" rgb(5, 5, 5);","rgba(204,130,115,0.4)", "rgba(226,170,125,0.4)", "rgba(240,207,142,0.4)", "rgba(246,237,206,0.4)", "rgba(168,200,166,0.4)", "rgba(108,141,138,0.4)", "rgba(100,80,88,0.4)"];
+const tagColors = [ "rgba(8,8,8,0.5)", "rgba(204,130,115,0.4)", "rgba(226,170,125,0.4)", "rgba(240,207,142,0.4)", "rgba(246,237,206,0.4)", "rgba(168,200,166,0.4)", "rgba(108,141,138,0.4)", "rgba(100,80,88,0.4)"];
         
 const header = document.getElementById("header");
 const filter = document.getElementById("filter");
 const buttonMenu = document.getElementById("buttonMenu");
 const buttonContent = document.getElementById("buttonContent");
-// const buttonFilter = document.getElementById("buttonFilter");
 const tagButtons = document.getElementsByClassName("buttonTag");
 const items = document.getElementsByClassName("item");
 
@@ -22,7 +21,6 @@ let highlighted = 0;
 document.addEventListener("DOMContentLoaded", (event) => {
     buttonMenu.addEventListener("click", () => { toggleMenu() });     
     buttonContent.addEventListener("click", () => { toggleAllContent() });
-    // buttonFilter.addEventListener("click", () => { toggleTags() })
 
     for (let i = 0; i < tagButtons.length; i++) {
         const index = tagButtons[i].dataset.index
@@ -45,8 +43,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const arr = []
         for (let j = 0; j < tags.length; j++) {
             arr.push(tags[j].dataset.index);
-            // let index = parseInt(tags[j].dataset.index) - 1;
-            // tags[j].style.backgroundColor = tagColors[index];
+
         }
         itemTags.push(arr);
     }
@@ -57,7 +54,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 function toggleMenu() {
     isMenu = !isMenu;
     buttonContent.classList.toggle("hidden");
-    // buttonFilter.classList.toggle("hidden");
 
     if (!isMenu) {
         filter.classList.add("hidden");

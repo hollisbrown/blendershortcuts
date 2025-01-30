@@ -5,7 +5,7 @@
     <title>Blender Shortcuts</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Blender, shortcuts, hotkeys, 3D modeling">
+    <meta name="keywords" content="Blender, shortcuts, hotkeys, overview, cheat sheet, 3D, modeling">
     <link rel="stylesheet" type="text/css" href="screen.css" media="screen">
     <script src="script.js" defer></script>
 </head>
@@ -13,12 +13,8 @@
 <body>
     <div id="header">
         <h1>Blender Shortcuts</h1>
-        <p>If you want to become lightning-fast in <a href="https://www.blender.org/" target="_blank">Blender</a>, there
-            is no way around using shortcuts. This website can help you learn them. A keyboard with a <em
-                class="important">numpad</em> and a mouse with a <em class="important">
-                wheel</em> are highly recommended.</p>
-        <p>Suggest changes to this website via <a href="https://github.com/hollisbrown/blendershortcuts/"
-                target="_blank">Github</a>.</p>
+        <p>This website provides a selection of useful default shortcuts in <a href="https://www.blender.org/" target="_blank">Blender</a>. For the best user experience, a mouse with a <em class="important">wheel</em> and a keyboard with a <em class="important">numpad</em> are recommended.</p>
+        <p>Suggest changes to this website via <a href="https://github.com/hollisbrown/blendershortcuts/" target="_blank">Github</a>.</p>
     </div>
 
     <div class="main">
@@ -87,6 +83,10 @@
                         <p><em class="shortcut">Num 5</em> to toggle <em class="important">Orthographic</em> view.
                         </p>
                     </li>
+                    <li>
+                        <p><em class="shortcut">Num 2</em>, <em class="shortcut">Num 4</em>, <em class="shortcut">Num 6</em>, <em class="shortcut">Num 8</em>
+                            to <em class="important">Rotate</em> the view in 15° steps.</p>
+                    </li>
                 </ul>
             </div>
 
@@ -145,13 +145,11 @@
             <div class="content">
                 <ul>
                     <li>
-                        <p> <em class="shortcut">Numpad &#46;</em> to set the point of interest to the current
+                        <p> <em class="shortcut">Numpad &#46;</em> to set the <em class="important">Point of Interest</em> to the current
                             selection.</p>
                     </li>
                     <li>
-                        <p>With multiple selected, it will set to the <em class="important">average</em> position of all
-                            selected.
-                        </p>
+                        <p> <em class="shortcut">Numpad &#8725;</em> to toggle <em class="important">Local View</em> which also hides all but the selected object.</p>
                     </li>
                 </ul>
             </div>
@@ -313,6 +311,35 @@
 
         </div>
 
+        <div class="item" id="Add">
+            <a class="itemLink" href="#Add">
+                <h3>Add</h3>
+                <h3><em class="shortcut">Shift</em> + <em class="shortcut">A</em></h3>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/Add.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="content">
+                <ul>
+                    <li>
+                        <p><em class="shortcut">Shift</em> + <em class="shortcut">A</em> adds new data.</p>
+                    </li>
+                    <li>
+                        <p>Depending on the context, this can be a new object, a new mesh inside the active object or a
+                            new node.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tags">
+                <div class="tag" data-index="1">General</div>
+                <div class="tag" data-index="5">Beginner</div>
+            </div>
+
+            <a class="itemCollapse"></a>
+
+        </div>
+
         <div class="item" id="Delete">
             <a class="itemLink" href="#Delete">
                 <h3>Delete</h3>
@@ -380,35 +407,6 @@
 
         </div>
 
-        <div class="item" id="Add">
-            <a class="itemLink" href="#Add">
-                <h3>Add</h3>
-                <h3><em class="shortcut">Shift</em> + <em class="shortcut">A</em></h3>
-                <video autoplay loop muted playsinline>
-                    <source src="videos/Add.mp4" type="video/mp4">
-                </video>
-            </a>
-            <div class="content">
-                <ul>
-                    <li>
-                        <p><em class="shortcut">Shift</em> + <em class="shortcut">A</em> adds new data.</p>
-                    </li>
-                    <li>
-                        <p>Depending on the context, this can be a new object, a new mesh inside the active object or a
-                            new node.</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="tags">
-                <div class="tag" data-index="1">General</div>
-                <div class="tag" data-index="5">Beginner</div>
-            </div>
-
-            <a class="itemCollapse"></a>
-
-        </div>
-
         <div class="item" id="Duplicate">
             <a class="itemLink" href="#Duplicate">
                 <h3>Duplicate</h3>
@@ -439,40 +437,6 @@
             <div class="tags">
                 <div class="tag" data-index="1">General</div>
                 <div class="tag" data-index="5">Beginner</div>
-            </div>
-
-            <a class="itemCollapse"></a>
-
-        </div>
-
-        <div class="item" id="RepeatLast">
-            <a class="itemLink" href="#RepeatLast">
-                <h3>Repeat Last</h3>
-                <h3><em class="shortcut">Shift</em> + <em class="shortcut">R</em></h3>
-                <video autoplay loop muted playsinline>
-                    <source src="videos/RepeatLast.mp4" type="video/mp4">
-                </video>
-            </a>
-
-            <div class="content">
-                <ul>
-                    <li>
-                        <p>
-                            <em class="shortcut">Shift</em> + <em class="shortcut">R</em> to repeat the last action.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Repeats <em class="important">Move</em>, <em class="important">Rotate</em> and <em
-                                class="important">Scale</em> relative to the result of the previous action.
-                        </p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="tags">
-                <div class="tag" data-index="1">General</div>
-                <div class="tag" data-index="6">Wizard</div>
             </div>
 
             <a class="itemCollapse"></a>
@@ -559,7 +523,7 @@
                     <li>
                         <p>
                             Move one thing precisely to another, especially useful to position the <em
-                                class="important">3D cursor</em>.
+                                class="important">3D Cursor</em>.
                     </li>
                     <li>
                         <p>
@@ -602,7 +566,7 @@
                     <li>
                         <p><em class="shortcut">Alt</em> + <em class="shortcut">S</em> to clear scale.</p>
                     </li>
-                    
+
                 </ul>
             </div>
 
@@ -629,7 +593,8 @@
                         <p>Only in <em class="important">Object Mode</em></p>
                     </li>
                     <li>
-                        <p><em class="shortcut">Ctrl</em> + <em class="shortcut">A</em> to apply changes to the transform.</p>
+                        <p><em class="shortcut">Ctrl</em> + <em class="shortcut">A</em> to apply changes to the
+                            transform.</p>
                     </li>
                     <li>
                         <p>Applies modifiers if hovered in the list.</p>
@@ -639,6 +604,40 @@
 
             <div class="tags">
                 <div class="tag" data-index="1">General</div>
+            </div>
+
+            <a class="itemCollapse"></a>
+
+        </div>
+
+        <div class="item" id="RepeatLast">
+            <a class="itemLink" href="#RepeatLast">
+                <h3>Repeat Last</h3>
+                <h3><em class="shortcut">Shift</em> + <em class="shortcut">R</em></h3>
+                <video autoplay loop muted playsinline>
+                    <source src="videos/RepeatLast.mp4" type="video/mp4">
+                </video>
+            </a>
+
+            <div class="content">
+                <ul>
+                    <li>
+                        <p>
+                            <em class="shortcut">Shift</em> + <em class="shortcut">R</em> to repeat the last action.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Repeats <em class="important">Move</em>, <em class="important">Rotate</em> and <em
+                                class="important">Scale</em> relative to the result of the previous action.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tags">
+                <div class="tag" data-index="1">General</div>
+                <div class="tag" data-index="6">Wizard</div>
             </div>
 
             <a class="itemCollapse"></a>
@@ -995,7 +994,7 @@
             <div class="content">
                 <ul>
                     <li>
-                        <p>Merge all selected vertices at a specified point.
+                        <p>Merge all selected vertices at a specified location.
                         </p>
                     </li>
                     <li>
