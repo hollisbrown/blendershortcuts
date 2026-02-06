@@ -85,13 +85,11 @@
 
     .item {
         text-decoration: none;
-        border-radius: 8px;
     }
 
     .item video {
         position: relative;
         width: 256px;
-
         left: 50%;
         transform: translateX(-50%);
         margin-top: 30px;
@@ -101,13 +99,10 @@
     .itemLink {
         display: block;
         padding: 30px;
-
         text-align: center;
         text-decoration: none;
         background-color: rgb(32, 32, 32);
         border: 1px solid rgb(32, 32, 32);
-        border-radius: 5px 5px 0px 0px;
-
         user-select: none;
     }
 
@@ -129,46 +124,6 @@
         padding-right: 20px;
     }
 
-    .tags {
-        padding: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        flex-basis: 10px;
-        gap: 3px;
-        background-color: rgb(20, 20, 20);
-        user-select: none;
-        display: none;
-    }
-
-    .tag {
-        padding: 8px;
-        padding-left: 10px;
-        padding-right: 10px;
-        border-radius: 3px;
-
-        font-size: 65%;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: #b3b3b3;
-        background-color: rgb(10, 10, 10);
-    }
-
-    .itemCollapse {
-        width: 100%;
-        height: 20px;
-        text-align: center;
-        display: block;
-        background-color: rgb(20, 20, 20);
-        border-radius: 0px 0px 5px 5px;
-        user-select: none;
-        cursor: pointer;
-    }
-
-    .itemCollapse:hover {
-        background-color: rgb(18, 18, 18);
-    }
-
     .hidden {
         display: none;
     }
@@ -187,41 +142,22 @@
     }
 
     #menu button {
-        width: 128px;
-        height: 56px;
+        width: 40px;
+        height: 40px;
         padding: 10px;
-        padding-left: 15px;
-        padding-right: 15px;
-
-        font-size: 70%;
+        padding-top: 7px;
+        font-size: 120%;
         text-transform: uppercase;
         letter-spacing: 1px;
         color: #bbbbbb;
-
         border-radius: 4px;
-        background-color: rgba(2, 2, 2, 1);
+        background-color: rgba(5, 5, 5, 1);
         border: none;
         white-space: nowrap;
     }
 
     #menu button:hover {
         filter: brightness(200%);
-    }
-
-    #menu #buttonMenu {
-        width: 56px;
-    }
-
-    #filter {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap-reverse;
-        gap: 10px;
-    }
-
-    #filter button {
-        color: white;
-        filter:brightness(90%);
     }
 
     #menu .hidden {
@@ -236,14 +172,6 @@
     #menu .inactive {
         background-color: rgb(5, 5, 5);
         color: rgb(144, 144, 144);
-    }
-
-    .highlight {
-        border: 1px solid rgb(255, 159, 44);
-    }
-
-    .highlight:hover {
-        border: 1px solid rgb(255, 170, 64); 
     }
 
     @media screen and (max-width: 720px) {

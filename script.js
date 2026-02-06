@@ -1,17 +1,7 @@
-const tagColors = [ "rgba(8,8,8,0.5)", "rgba(204,130,115,0.4)", "rgba(226,170,125,0.4)", "rgba(240,207,142,0.4)", "rgba(246,237,206,0.4)", "rgba(168,200,166,0.4)", "rgba(108,141,138,0.4)", "rgba(100,80,88,0.4)"];
-        
 const header = document.getElementById("header");
-const filter = document.getElementById("filter");
-const buttonMenu = document.getElementById("buttonMenu");
-const buttonContent = document.getElementById("buttonContent");
-const tagButtons = document.getElementsByClassName("buttonTag");
+const buttonCollapse = document.getElementById("buttonCollapse");
 const items = document.getElementsByClassName("item");
-
-const itemTags = [];
 const itemContents = [];
-const itemLinks = [];
-const itemAnchors = [];
-const itemCollapse = [];
 
 let isMenu = false;
 let isContent = false;
@@ -19,36 +9,13 @@ let isTag = false;
 let highlighted = 0;
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    buttonMenu.addEventListener("click", () => { toggleMenu() });     
-    buttonContent.addEventListener("click", () => { toggleAllContent() });
-
-    for (let i = 0; i < tagButtons.length; i++) {
-        const index = tagButtons[i].dataset.index
-        tagButtons[i].addEventListener("click", () => { filterByTag(index) });
-        tagButtons[i].style.backgroundColor = tagColors[i];
-    }
-
+    buttonCollapse.addEventListener("click", () => { toggleAllContent() });
     for (let i = 0; i < items.length; i++) {
-        const link = items[i].getElementsByClassName("itemLink")[0];
-        itemLinks.push(link);
-        itemAnchors.push(link.href.split('#')[1]);
-        link.addEventListener("click", () => { expandContent(i); highlight(i) });
         const content = items[i].getElementsByClassName("content")[0];
         itemContents.push(content);
-        const collapse = items[i].getElementsByClassName("itemCollapse")[0]
-        collapse.addEventListener("click", () => { toggleContent(i) });
-        itemCollapse.push(collapse);
-        const tags = items[i].getElementsByClassName("tag");
 
-        const arr = []
-        for (let j = 0; j < tags.length; j++) {
-            arr.push(tags[j].dataset.index);
-
-        }
-        itemTags.push(arr);
     }
-    buttonMenu.classList.toggle("hidden");
-    readURLAnchor();
+    buttonCollapse.classList.toggle("hidden");
 });
 
 function toggleMenu() {
